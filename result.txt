@@ -1,0 +1,76 @@
+Coordonnées : Colombes, France
+Coordonnées : {
+    "address_components": [
+        {
+            "long_name": "92700",
+            "short_name": "92700",
+            "types": [
+                "postal_code"
+            ]
+        },
+        {
+            "long_name": "Colombes",
+            "short_name": "Colombes",
+            "types": [
+                "locality",
+                "political"
+            ]
+        },
+        {
+            "long_name": "Hauts-de-Seine",
+            "short_name": "Hauts-de-Seine",
+            "types": [
+                "administrative_area_level_2",
+                "political"
+            ]
+        },
+        {
+            "long_name": "Île-de-France",
+            "short_name": "Île-de-France",
+            "types": [
+                "administrative_area_level_1",
+                "political"
+            ]
+        },
+        {
+            "long_name": "France",
+            "short_name": "FR",
+            "types": [
+                "country",
+                "political"
+            ]
+        }
+    ],
+    "formatted_address": "92700 Colombes, France",
+    "geometry": {
+        "bounds": {
+            "northeast": {
+                "lat": 48.93770929999999,
+                "lng": 2.2732833
+            },
+            "southwest": {
+                "lat": 48.905918,
+                "lng": 2.2205744
+            }
+        },
+        "location": {
+            "lat": 48.9237226,
+            "lng": 2.2431251
+        },
+        "location_type": "APPROXIMATE",
+        "viewport": {
+            "northeast": {
+                "lat": 48.93770929999999,
+                "lng": 2.2732833
+            },
+            "southwest": {
+                "lat": 48.905918,
+                "lng": 2.2205744
+            }
+        }
+    },
+    "place_id": "ChIJS0wd8shl5kcRAIDY4caCCxw",
+    "types": [
+        "postal_code"
+    ]
+}

@@ -1,0 +1,24 @@
+curl -X POST -H "Content-Type: application/json" -d '{"get_started":{"payload":"GET_STARTED_PAYLOAD"}}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAFCTy00UEQBAJNsqPTYzsHYYSXnLvm0cbN196HowkRdBhRU9gi6ZCYUhGutEMAtfZBEFWCzyRWEf0TcHWzKaXBU2YcjistVMuTE1fgDlMPQeoukedmtbSairZACKqDvv57tioWz4CZCoZABAeWz4fjfpKwdXfbgpOIzqZCwAJnQZDZD"   
+
+
+cf push diving-assistant 
+
+cf logs diving-assistant --recent >> log.txt
+
+
+
+https://github.com/watson-developer-cloud/food-coach/blob/master/app.js
+
+
+https://developers.facebook.com/docs/messenger-platform/messenger-profile/persistent-menu
+
+
+https://www.ibmwatsonconversation.com/us-south/22187639-c590-4372-850b-2c509a0e6bbc/workspaces/50aef7e0-5c8d-40ab-9691-056110c066cd/dialog
+
+
+https://www.isanthea.com/padi-advanced-diver
+
+
+
+
+curl -X POST -H "Content-Type: application/json" -d '{"greeting":[{"locale":"default","text":"Hello!"}, {"locale":"en_US","text":"Un assistant capable de répondre à vos questions autour des formations PADI."}]}' "https://graph.facebook.com/v2.6/me/messenger_profile?access_token=EAAFCTy00UEQBAJNsqPTYzsHYYSXnLvm0cbN196HowkRdBhRU9gi6ZCYUhGutEMAtfZBEFWCzyRWEf0TcHWzKaXBU2YcjistVMuTE1fgDlMPQeoukedmtbSairZACKqDvv57tioWz4CZCoZABAeWz4fjfpKwdXfbgpOIzqZCwAJnQZDZD"    

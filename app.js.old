@@ -1,0 +1,451 @@
+/*eslint-env node */
+var express = require("express");
+var emoji = require("node-emoji").emoji;
+var request = require("request");
+var bodyParser = require("body-parser");
+var Facebook = require("facebook-node-sdk");
+var watson = require( "watson-developer-cloud" );
+var createTextVersion = require("textversionjs");
+var workspaceId = "50aef7e0-5c8d-40ab-9691-056110c066cd";
+var session = require("cookie-session");
+var path = require("path");
+
+// Facebook payloads
+var CallAction = "CALL";
+var ContinueWatson = "WATS";
+var CIS = "CIS:";
+var Picture = "PICT";
+var NoPicture = "NOPI";
+
+var openMedicamentPathRoot = "https://open-medicaments.fr/api/v1/medicaments";
+
+var conversation = watson.conversation( {
+  url: "https://gateway.watsonplatform.net/conversation/api",
+  password: "gMzq0zzYoeKz",
+  username: "856422da-2f4c-4eb4-b03f-2a1d3c73531d",
+  version_date: "2016-07-11",
+  version: "v1"
+} );
+
+var alchemy_language = watson.alchemy_language({
+  api_key: "0ad1432f2d7ee7fc6a9657d656b7f6cee7219eeb"
+});
+
+// file is included here:
+
+var app = express();
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+/* On utilise les sessions */
+app.use(session({secret: "flashinfosecret"}));
+
+var conversationContext;
+
+//Watson part
+// Endpoint to be call from the client side
+app.post( "/api/message", function(req, res) {
+
+} );
+
+//assuming app is express Object.
+app.get("/license",function(req,res){
+     res.sendFile("license.html");
+});
+
+//Facebook part
+// This code is called only when subscribing the webhook //
+app.get("/webhook/", function (req, res) {
+    if (req.query["hub.verify_token"] === secret) {
+        res.send(req.query["hub.challenge"]);
+    }
+    res.send("Error, wrong validation pageAccessToken");
+});
+
+
+// Incoming messages reach this end point //
+app.post("/webhook/", function (req, res) {
+
+    var url, currentCIS, therapeute;
+    var messaging_events, messageData;
+    var sender, event, i, openMedicamentPath;
+    messaging_events = req.body.entry[0].messaging;
+    for (i = 0; i < messaging_events.length; i++) {
+        event = req.body.entry[0].messaging[i];
+        sender = event.sender.id;
+        if (event.message && event.message.text) {
+        	// We get a text : we can get his first name if needed
+        	if (conversationContext && conversationContext.name){
+				console.log ("Name known " + conversationContext.name);
+			}
+			
+        }
+        if (event.postback) {
+        	if (event.postback.payload)
+        	{
+        		switch (event.postback.payload.substring(0, 4)) {
+        		case NoPicture:
+        			messageData = {
+        			text:  "OK : En quoi d'autre puis-je vous aider"+emoji.question
+    				};
+	        		sendFBMessage (sender, messageData);
+        		break;
+
+        		case CallAction :
+        		  messageData ={
+					    "attachment":{
+					      "type":"template",
+					         "payload":{
+					            "template_type":"button",
+					            "text":"OK : merci de valider pour appeler un support",
+					            "buttons":[
+					               {
+					                  "type":"phone_number",
+					                  "title":"Appeler un support",
+					                  "payload":"+33682822406"
+					               }
+					            ]
+					         }
+					    }
+					};
+					sendFBMessage (sender, messageData);
+					break;
+        		case ContinueWatson:
+        			converseText (sender, conversationContext.inputText, emoji.neutral_face);
+        			break;
+        		case CIS:
+        			// Choix du médicament => on renvoie l'indication thérapeutique
+        			currentCIS = event.postback.payload.substring(4, event.postback.payload.length);
+        			openMedicamentPath = openMedicamentPathRoot + "/" + currentCIS;
+					request(openMedicamentPath, function (error, response, body) {
+						  if (!error && response.statusCode === 200) {
+						  		var libelle;
+						  		conversationContext.medicamentDetails = JSON.parse(body);
+						  		libelle = conversationContext.medicamentDetails.denomination;
+						  		// Module externe qui convertit du HTML en texte
+						  		messageData = {
+						  			text:  emoji.information_source + " " +libelle,
+						  		};
+						  		// Pour éviter la désynchro des messages (vu en test parfois)
+						  		// on n'utilise par la fonction send FB Message
+						  		// mais les appels directs de l'API
+
+						  		request({
+								        url: "https://graph.facebook.com/v2.6/me/messages",
+								        qs: {access_token: pageAccessToken},
+								        method: "POST",
+								        json: {
+								            recipient: {id: sender},
+								            message: messageData,
+								        }
+								    }, function (error, response, body) {
+								        if (error) {
+								            console.log("Error sending message: ", error);
+								        } else if (response.body.error) {
+								            console.log("Error: ", response.body.error);
+								        } else
+								        {
+								        	therapeute = createTextVersion(conversationContext.medicamentDetails.indicationsTherapeutiques);
+									  		messageData = {
+									  			text: "Indications thérapeutiques:" + therapeute.substring(0, 292)
+									  		};
+	  								  		request({
+										        url: "https://graph.facebook.com/v2.6/me/messages",
+										        qs: {access_token: pageAccessToken},
+										        method: "POST",
+										        json: {
+										            recipient: {id: sender},
+										            message: messageData,
+										        }
+										    }, function (error, response, body) {
+												if (therapeute.length > 292) {
+										  			messageData = {
+										  				text: therapeute.substring(292, therapeute.lentgh)
+										  			};
+	  											  	sendFBMessage (sender, messageData);
+										  		}
+										  		//Voir image du médicament?
+				  				     			messageData = {
+												    "attachment":{
+												      "type":"template",
+												      "payload":{
+												        "template_type":"button",
+												        "text":emoji.frame_with_picture + "Voulez-vous voir une image du médicament?",
+												        "buttons":[
+												          {
+												            "type":"postback",
+												            "title":"Oui",
+												            "payload": Picture
+												          },
+												          {
+												            "type":"postback",
+												            "title":"Non",
+												            "payload": NoPicture
+												          }
+												        ]
+												      }
+												    }
+												  };
+											sendFBMessage (sender, messageData);
+										  	});
+								        }
+								    });
+						  }
+						  else {
+					  			messageData = {
+        							text: "Erreur lecture détails médicament"
+								};
+								sendFBMessage (sender, messageData);
+						  }
+					});
+        			break;
+        		case "NOUV":
+        			conversationContext = {};
+        			messageData = {
+        				text: emoji.heart + " " + "Allez c'est parti...Merci de me donner le nom d'un nouveau médicament à étudier"
+    				};
+	        		sendFBMessage (sender, messageData);
+        		break;
+        		default:
+        			conversationContext = {};
+        			messageData = {
+        				text: emoji.heart + " " + "Bienvenue à Flash Info Médicaments : Veuillez saisir le nom du médicament à étudier"
+    				};
+	        		sendFBMessage (sender, messageData);
+	        	}
+        	}
+      }
+    }
+    res.sendStatus(200);
+});
+
+
+// This function receives the response data to FB  //
+function sendFBMessage(sender,messageData) {
+    request({
+        url: "https://graph.facebook.com/v2.6/me/messages",
+        qs: {access_token: pageAccessToken},
+        method: "POST",
+        json: {
+            recipient: {id: sender},
+            message: messageData,
+        }
+    }, function (error, response, body) {
+        if (error) {
+            console.log("Error sending message: ", error);
+        } else if (response.body.error) {
+            console.log("Error sec: ", response.body.error);
+            request({
+		        url: "https://graph.facebook.com/v2.6/me/messages",
+		        qs: {access_token: pageAccessToken},
+		        method: "POST",
+		        json: {
+		            recipient: {id: sender},
+		            messageData: {text: emoji.no_entry_sign+"Erreur technique : Veuillez renouveler votre demande.Merci",
+		        }
+		    }, function (error, response, body) {
+		        if (error) {
+		            console.log("Error sending message twice: ", error);
+			        } else if (response.body.error) {
+			            console.log("Error third: ", response.body.error);
+			       }
+			      }
+		    });
+        }
+    });
+}
+
+
+function converseText (sender, inputText, smiley) {
+		var payloadToWatson = {};
+		var messageData, bodyMeds;
+		var openMedicamentPath;
+		var button = new Array();
+
+	    payloadToWatson.input = {
+	        text: inputText
+	    };
+	  	payloadToWatson.workspace_id = workspaceId;
+	     if (!conversationContext)
+	     	conversationContext = {};
+	    payloadToWatson.context = conversationContext;
+	    conversation.message( payloadToWatson, function(err, response) {
+	    	if (err)
+    			console.log("error:", err);
+    		else {
+	        	conversationContext = response.context;
+	        	// Si pas de de medicament dans le contexte c'est la premiere reponse
+	        	if (!conversationContext.medicament)
+	        	{
+	        		conversationContext.medicament = inputText;
+	        		//récupérer le code CICS du médicaement
+					openMedicamentPath = openMedicamentPathRoot + "?query=" + conversationContext.medicament + "&limit=3";
+					request(openMedicamentPath, function (error, response, body) {
+					  if (!error && response.statusCode === 200 && body) {
+					  	 if (JSON.parse(body).length === 0) {
+					  	 	messageData = {
+        						text: emoji.white_frowning_face + " " + "Désolé : je n'ai pas trouvé d'information sur : " + conversationContext.medicament
+							};
+							conversationContext.medicament = "";
+							sendFBMessage (sender, messageData);
+							messageData = {
+        						text: "Veuillez resaisir un nom de médicament"
+							};
+							sendFBMessage (sender, messageData);
+							return null;
+					  	 }
+
+					  	 messageData ={
+					  	   	"attachment": {
+        						"type": "template",
+							     "payload": {
+           								 "template_type": "list",
+          								  "top_element_style": "compact"
+          							 }
+          					}
+          				 };
+            			 bodyMeds = JSON.parse (body);
+            			 messageData.attachment.payload.elements = [];
+					  	 for (var i=0; i < bodyMeds.length ;i++) {
+					  	 	button = [];
+						  	 	button.push ({
+						  	 		"type" :"postback",
+						  	 		"title":"Plus d'infos?",
+	                				"payload":CIS + bodyMeds[i].codeCIS,
+	                				});
+						  	 	messageData.attachment.payload.elements.push({
+								    "title": bodyMeds[i].denomination,
+								    "subtitle" : "Code CIS: " + bodyMeds[i].codeCIS,
+								    "buttons" : button,
+								});
+					  	 }
+		 				sendFBMessage (sender, messageData);
+					  }
+					  else {
+					  	messageData = {
+        					text: emoji.white_frowning_face + " " + "Désolé : je n'ai pas trouvé d'information sur : " + conversationContext.medicament
+						};
+						conversationContext.medicament = "";
+						sendFBMessage (sender, messageData);
+						messageData = {
+        					text: "Veuillez resaisir un nom de médicament"
+						};
+						sendFBMessage (sender, messageData);
+					  }
+					});
+
+	        	}
+	        	else  {
+	        			if (!conversationContext.medicamentDetails)
+	        		    {
+	        				messageData = {
+						  				text: emoji.white_frowning_face + " " + "Désolé, il faut d'abord sélectionner un médicament dans la liste proposée"
+						  			};
+						  	sendFBMessage (sender, messageData);
+						  	return;
+						}
+			        	switch (response.output.text[0]) {
+						case "prescritpion":
+							var prescription, conditions;
+							if (conversationContext.medicamentDetails.conditionsPrescriptionDelivrance && conversationContext.medicamentDetails.conditionsPrescriptionDelivrance[0])
+								conditions = conversationContext.medicamentDetails.conditionsPrescriptionDelivrance[0].toUpperCase();
+							else
+								conditions = "";
+							switch (conditions) {
+								case "":
+									prescription = "Pas de prescription particulière pour ce médicament";
+								break;
+								case "LISTE I":
+									prescription = "En France, ce médicament fait partie de la Liste I : il est soumis à prescription médicale et ne peut être obtenu que sur présentation d’une ordonnance rédigée par un médecin, un chirurgien-dentiste ou une sage-femme.";
+								break;
+								case "LISTE II":
+									prescription = "En France, ce médicament fait partie de la Liste II : il peut être délivré plusieurs fois à partir de la même ordonnance pendant 12 mois, sauf indication contraire du prescripteur";
+								break;
+								default:
+									prescription = "Médicament de catégorie : "+conversationContext.medicamentDetails.conditionsPrescriptionDelivrance[0];
+								break;
+								}
+							messageData = {
+						  				text: prescription.substring(0, 320)
+						  			};
+						  	sendFBMessage (sender, messageData);
+						break;
+						case "posologie":
+							messageData = {
+        						text: emoji.white_frowning_face + " " + "Désolé...La posologie n'est pas implémentée: il est préférable de voir un médecin ou une paharmacie."
+							};
+		        			sendFBMessage (sender, messageData);
+						break;
+						case "contreindications":
+							messageData = {
+        						text: emoji.white_frowning_face + " " + "Désolé...Les contres-indications ne sont pas implémentées: il est préférable de voir un médecin ou une paharmacie."
+							};
+		        			sendFBMessage (sender, messageData);
+						break;
+		        		case "finance":
+		        		case "remboursement":
+		        			var prix = false;
+		        			for (var i in conversationContext.medicamentDetails.presentations) {
+		        				if (conversationContext.medicamentDetails.presentations[i].prix) {
+		        					messageData = {
+        								text: "Sous la forme de '" + conversationContext.medicamentDetails.presentations[i].libelle + "', le prix est de " + conversationContext.medicamentDetails.presentations[i].prix + "€ et est remboursé à "+ conversationContext.medicamentDetails.presentations[i].tauxRemboursement
+									};
+								prix = true;
+								break;
+								}
+		        			}
+		        			if (prix === false)
+		        				messageData = {
+        							text: emoji.white_frowning_face + " " + "Désolé, je n'ai pas d'information financière sur ce médicament"
+									};
+
+		        			sendFBMessage (sender, messageData);
+		        			break;
+		        		case "composition":
+		        			var compo = "";
+		        			for (var j in conversationContext.medicamentDetails.compositions) {
+		        				if (conversationContext.medicamentDetails.compositions[j].substancesActives) {
+		        					for (var k in conversationContext.medicamentDetails.compositions[j].substancesActives) {
+		        						if (compo)
+		        							compo = compo +", ";
+		        						compo = compo + conversationContext.medicamentDetails.compositions[j].substancesActives[k].denominationSubstance;
+		        					}
+								}
+		        			}
+		        			if (compo === "")
+		        				messageData = {
+        							text: emoji.white_frowning_face + " " + "Désolé, je n'ai pas cette information"
+									};
+							else
+								messageData = {
+									text: emoji.telescope + " Voici le(s) composant (s) : " + compo
+									};
+
+		        			sendFBMessage (sender, messageData);
+		        			break;
+		        		case "help":
+		        			messageData = {
+        						text: emoji.information_source + " " + "Flash Info Medicament, c'est simple : Une fois un médicament sélectionné, vous pouvez me demander le prix, s'il faut une ordonnance, la composition..ou choisir un nouveau médicament avec le menu Messenger."
+							};
+		        			sendFBMessage (sender, messageData);
+		        			break;
+		        		default:
+		        			messageData = {
+        						text: emoji.white_frowning_face + " " + "Désolé...je ne comprends pas ce que vous voulez. En quoi puis-je vous aider?"
+							};
+		        			sendFBMessage (sender, messageData);
+							break;
+						}
+				}
+
+	        }
+	    });
+}
+var secret = "VincentSecretpageAccessToken";
+
+var pageAccessToken="EAAFCTy00UEQBAJNsqPTYzsHYYSXnLvm0cbN196HowkRdBhRU9gi6ZCYUhGutEMAtfZBEFWCzyRWEf0TcHWzKaXBU2YcjistVMuTE1fgDlMPQeoukedmtbSairZACKqDvv57tioWz4CZCoZABAeWz4fjfpKwdXfbgpOIzqZCwAJnQZDZD";
+
+var host = process.env.VCAP_APP_HOST || "localhost";
+var port = process.env.VCAP_APP_PORT || 3000;
+app.listen(port, host);

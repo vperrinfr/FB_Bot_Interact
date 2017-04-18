@@ -1,0 +1,10 @@
+{
+    "appSecret": "",
+    "pageAccessToken": "",
+    "validationToken": "",
+    "serverURL": "https://myfbbotmarketing.mybluemix.net",
+    "InteractURL":"http://185.64.246.169:7001/interact/servlet/RestServlet",
+    "IC":"New TowneBank Call Center",
+    "ip":"TowneBankCallCenter",
+    "Indiv_id":"10"
+}

@@ -1,0 +1,200 @@
+/*eslint-env node */
+var express = require("express");
+var emoji = require("node-emoji").emoji;
+var request = require("request");
+var bodyParser = require("body-parser");
+var watson = require( "watson-developer-cloud" ); 
+
+var workspaceIdBPCE = "50aef7e0-5c8d-40ab-9691-056110c066cd";
+var workspaceIdSG="50aef7e0-5c8d-40ab-9691-056110c066cd";
+var session = require("cookie-session");
+var path = require("path");
+
+var secret = "VincentSecretpageAccessToken";
+
+
+var pageAccessToken="EAAFCTy00UEQBAJNsqPTYzsHYYSXnLvm0cbN196HowkRdBhRU9gi6ZCYUhGutEMAtfZBEFWCzyRWEf0TcHWzKaXBU2YcjistVMuTE1fgDlMPQeoukedmtbSairZACKqDvv57tioWz4CZCoZABAeWz4fjfpKwdXfbgpOIzqZCwAJnQZDZD";
+
+
+// Facebook payloads
+var CallAction = "CALL";
+var ContinueWatson = "WATS";
+
+
+var conversation = watson.conversation( {
+  url: "https://gateway.watsonplatform.net/conversation/api",
+  password: "gMzq0zzYoeKz",
+  username: "856422da-2f4c-4eb4-b03f-2a1d3c73531d",
+  version_date: "2016-07-11",
+  version: "v1"
+} );
+
+// file is included here:
+
+var app = express();
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+/* On utilise les contexts */
+app.use(session({secret: "flashinfosecret"}));
+
+
+var contexts;
+
+//Watson part
+// Endpoint to be call from the client side
+app.post( "/api/message", function() {
+
+} );
+
+//assuming app is express Object.
+app.get("/license",function(res){
+     res.sendFile("license.html");
+});
+
+//Facebook part
+// This code is called only when subscribing the webhook //
+app.get("/webhook/", function (req, res) {
+    if (req.query["hub.verify_token"] === secret) {
+        res.send(req.query["hub.challenge"]);
+    }
+    res.send("Error, wrong validation pageAccessToken");
+});
+
+// Incoming messages reach this end point //
+app.post("/webhook/", function (req, res) {
+
+    var url;
+    var messaging_events, messageData;
+    var sender, event, i;
+    var  conversationContext = findOrCreateContext(sender);
+   
+    messaging_events = req.body.entry[0].messaging;
+
+
+    for (i = 0; i < messaging_events.length; i++) {
+        event = req.body.entry[0].messaging[i];
+        sender = event.sender.id;
+        conversationContext = findOrCreateContext(sender);
+        
+        ///
+        ///   Cas 1 : Message utilisateur
+        ///
+        if (event.message && event.message.text) {
+            console.log("Message Recu :" + event.message.text)
+					analyzeTone (sender, event.message.text);
+        }
+        ///
+        ///   Cas 2 : Postback Messenger
+        ///
+        else if (event.postback) {
+        			url =  "https://graph.facebook.com/v2.6/"+sender+"?fields=first_name&access_token="+pageAccessToken;
+					request(url, function (err, response, body) {
+				       if (!err && response.statusCode === 200) {
+					        conversationContext.name = JSON.parse (body).first_name;
+					        console.log ("so ok"+conversationContext.name);
+                			messageData = {
+        				text: emoji.information_source + " "+ conversationContext.name + ", bienvenue , en quoi puis je vous aider?"
+    				};
+	        				sendFBMessage (sender, messageData);
+					    }
+					    else{
+							console.log("error facebook in the bginning "+ err);
+							messageData = {text: emoji.no_entry_sign+"Erreur technique : Veuillez renouveler votre demande.Merci"};
+							sendFBMessage (sender, messageData);
+					    }		    
+					});
+      }
+ 		
+    }
+    res.sendStatus(200);
+});
+
+
+// This function receives the response data to FB  //
+function sendFBMessage(sender,messageData) {
+    request({
+        url: "https://graph.facebook.com/v2.6/me/messages",
+        qs: {access_token: pageAccessToken},
+        method: "POST",
+        json: {
+            recipient: {id: sender},
+            message: messageData,
+        }      
+    }, function (error, response) {
+        if (error) {
+            console.log("Error sending message: ", error + messageData) ;
+        } else if (response.body.error) {	
+            console.log("Error sec: ", response.body.error + messageData);
+           request({
+		        url: "https://graph.facebook.com/v2.6/me/messages",
+		        qs: {access_token: pageAccessToken},
+		        method: "POST",
+		        json: {
+		            recipient: {id: sender},
+		            message: {text: emoji.no_entry_sign+"Désolé nous sommes confrontés à un problème technique.Merci de votre compréhension"},
+		        		}  
+		    }, function (error, response) {
+		        if (error) {
+		            console.log("Error sending message twice: ", error);
+			        } else if (response.body.error) {
+			            console.log("Error third: ", response.body.error);
+			       }
+			 });
+          }
+    });
+}
+
+function converseText (sender, inputText) {
+		var payloadToWatson = {};
+		var messageData;
+	    var conversationContext = findOrCreateContext(sender);		    	
+	    payloadToWatson.input = {
+	        text: inputText
+	    };
+	  	payloadToWatson.workspace_id = conversationContext.workspaceId;
+	    payloadToWatson.context = conversationContext;
+	    conversation.message( payloadToWatson, function(err, response) {
+	    console.log("payloadToWatson : ", payloadToWatson);
+				if (err)
+    			console.log("error:", err);
+    		else {
+    			// traitements spécifiques ou pas en fonction de la réponse de Watson Conversation
+	       		 	conversationContext = response.context;
+								console.log("Response : ", response);
+		        	sendFBMessage (sender, {text:response.output.text[0]});
+	        }
+	    });
+}
+
+function analyzeTone (sender, inputText) {
+      var messageData;
+      var params = {
+      		text : inputText,
+      		language : "french"
+      	};
+      var  conversationContext = findOrCreateContext(sender);
+	  converseText (sender, inputText); 
+	console.log("Analyze : ",	inputText);
+}
+
+function findOrCreateContext (fbid){
+   var sessionId;
+    if (!contexts)
+        contexts = [];
+   if(contexts[fbid])
+        sessionId = fbid;
+        
+    if (!sessionId) {
+      // No session found for user fbid, let's create a new one
+      //sessionId = new Date().toISOString();
+      sessionId = fbid;
+      contexts[sessionId] = {fbid: fbid, workspaceId:workspaceIdSG};
+      console.log ("new session : " + sessionId + fbid);
+    }
+    return contexts[sessionId];
+}
+var host = process.env.VCAP_APP_HOST || "localhost";
+var port = process.env.VCAP_APP_PORT || 3000;
+app.listen(port, host);

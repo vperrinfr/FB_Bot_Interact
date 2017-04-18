@@ -1,0 +1,1277 @@
+Connecté, dump des logs récents pour application diving-assistant de l'org vincent.perrin@fr.ibm.com / espace dev en tant que vincent.perrin@fr.ibm.com...
+
+2017-04-07T22:47:55.07+0200 [APP/0]      OUT so okVincent
+2017-04-07T22:47:55.98+0200 [APP/0]      OUT event.message.text : Bonjour Vincent, je m'appelle Watson The Diver, je suis spécialiste autour de la plongée. Comment puis-je vous aider ? 
+2017-04-07T22:47:56.00+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:47:55.977 +0000] "POST /webhook HTTP/1.1" 200 488 2 "-" "-" 192.155.237.115:23477 x_forwarded_for:"31.13.113.171" x_forwarded_proto:"https" vcap_request_id:963bd7e6-3aee-4374-43b4-bdba48a8372b response_time:0.023607045 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1603709523"
+2017-04-07T22:47:57.05+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:47:57.047 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 169.54.202.29:42157 x_forwarded_for:"31.13.113.85" x_forwarded_proto:"https" vcap_request_id:a04585b0-eda9-442a-5883-067f25b8c858 response_time:0.008789582 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3729860441"
+2017-04-07T22:47:57.22+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:47:57.222 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 108.168.250.154:22444 x_forwarded_for:"31.13.113.86" x_forwarded_proto:"https" vcap_request_id:8b043cd1-a67b-45b3-4c2c-4440e2e581e0 response_time:0.006558093 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"494664345"
+2017-04-07T22:48:05.43+0200 [APP/0]      OUT event.message.text : Aide
+2017-04-07T22:48:05.43+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:48:05.426 +0000] "POST /webhook HTTP/1.1" 200 268 2 "-" "-" 169.54.202.29:42371 x_forwarded_for:"31.13.110.122" x_forwarded_proto:"https" vcap_request_id:eb1d0081-c43e-4acb-62a2-31708f80ef02 response_time:0.010216039 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1408318143"
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT Detected {
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             "intent": "help",
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             "confidence": 0.9352601868499827
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         }
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT     ],
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         "text": "Aide"
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT     },
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         ],
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             "Aide"
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         ]
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT     },
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT                 "root"
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             ],
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             "dialog_request_counter": 1,
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT                     0,
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT                     0,
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT                     1,
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT                 ]
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             "branch_exited": true,
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             "branch_exited_reason": "completed"
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT     }
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT }
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT Detected intent: #help
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         ],
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         "dialog_request_counter": 1,
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT                 0,
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT                 1,
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         "branch_exited": true,
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT         "branch_exited_reason": "completed"
+2017-04-07T22:48:05.69+0200 [APP/0]      OUT     }
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         {
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "intent": "generalinfo",
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         }
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT     "entities": [
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         {
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "entity": "spécialités",
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT                 69,
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             ],
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "value": "Etanche",
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "confidence": 1
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         }
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT     ],
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         "text": "Je sais répondre à des questions comme \"Explication de la spécialité Etanche\", \"Que puis-je faire en terme de formation ?\", \"Sites de plongée proches?\""
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "Que diriez-vous de nous contacter pour en parler ?"
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         ],
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "Interet"
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT     },
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT                 "Interet"
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             ],
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "dialog_turn_counter": 1,
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "dialog_request_counter": 1,
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT                 "node_11_1491251387322": [
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT                     0
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT             }
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT         }
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT }
+2017-04-07T22:48:06.74+0200 [APP/0]      OUT Detected intent: #generalinfo
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT Detected Entity: #spécialités
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT response.context {
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT     "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT             "Interet"
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT         ],
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT         "dialog_turn_counter": 1,
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT         "dialog_request_counter": 1,
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT             "node_11_1491251387322": [
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT             ],
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT                 0
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT             ]
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT         }
+2017-04-07T22:48:06.75+0200 [APP/0]      OUT }
+2017-04-07T22:48:06.90+0200 [APP/0]      OUT Error sec:  [object Object][object Object]
+2017-04-07T22:48:07.05+0200 [APP/0]      OUT Error third:  { message: '(#100) No matching user found',
+2017-04-07T22:48:07.05+0200 [APP/0]      OUT   type: 'OAuthException',
+2017-04-07T22:48:07.05+0200 [APP/0]      OUT   error_subcode: 2018001,
+2017-04-07T22:48:07.05+0200 [APP/0]      OUT   fbtrace_id: 'ADwS1/KnCjm' }
+2017-04-07T22:48:08.00+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:48:07.994 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 108.168.250.155:56829 x_forwarded_for:"31.13.113.77" x_forwarded_proto:"https" vcap_request_id:b9df746e-030e-44e4-6398-d86b7c402c33 response_time:0.007479827 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"4146554303"
+2017-04-07T22:48:08.37+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:48:08.369 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 169.54.202.27:22970 x_forwarded_for:"31.13.110.101" x_forwarded_proto:"https" vcap_request_id:8d5a4f63-ac6d-4430-5166-c3705a2ffea9 response_time:0.009629128 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3105999727"
+2017-04-07T22:49:20.61+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:49:20.595 +0000] "POST /webhook HTTP/1.1" 200 305 2 "-" "-" 169.54.202.27:16658 x_forwarded_for:"31.13.113.70" x_forwarded_proto:"https" vcap_request_id:d095021e-fdaf-4325-4a2b-e2bd2043d558 response_time:0.019436458 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1709017405"
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "intent": "Niveau",
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "confidence": 0.9030256127116341
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT     ],
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         {
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "location": [
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 28
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "confidence": 1
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         }
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT     ],
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         "text": "Je viens de faire un baptème en mer."
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT     },
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "Désolé, je n'ai pas compris votre phrase",
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "Exemple de questions ? \"Pourrez-vous me renseigner sur le cursus de formation ?\", \" Pouvez-vous me donner plus d'info sur la spécialité Nitrox ?\", \"Ou plonger ?\""
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "node_2_1479906095307",
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "Aide"
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         ]
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 "root"
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "dialog_turn_counter": 2,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                     0,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                     2
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 ],
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                     0,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                     0,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                     2
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT Detected Entity: #padi_certification
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT     "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT     "system": {
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             "root"
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         "dialog_turn_counter": 2,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         "dialog_request_counter": 2,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 1,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 0,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 2
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 0,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT                 0,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT             ]
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         },
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         "branch_exited": true,
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT         "branch_exited_reason": "completed"
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT     }
+2017-04-07T22:49:20.78+0200 [APP/0]      OUT }
+2017-04-07T22:49:21.57+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:49:21.568 +0000] "POST /webhook HTTP/1.1" 200 533 2 "-" "-" 192.155.237.119:35630 x_forwarded_for:"31.13.113.82" x_forwarded_proto:"https" vcap_request_id:0382b070-fdfa-46a8-658d-cde378f73570 response_time:0.008344173 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1592301633"
+2017-04-07T22:49:21.58+0200 [APP/0]      OUT event.message.text : Désolé, je n'ai pas compris votre phrase
+2017-04-07T22:49:21.72+0200 [APP/0]      OUT error: { error: { error: { 'input.text': [Object] } } }
+2017-04-07T22:49:22.69+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:49:22.691 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 108.168.250.151:41998 x_forwarded_for:"31.13.113.182" x_forwarded_proto:"https" vcap_request_id:209de6b9-a5ac-445f-4efe-7a2945b6b9af response_time:0.007403582 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"499439247"
+2017-04-07T22:49:22.71+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:49:22.706 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 108.168.250.154:21796 x_forwarded_for:"31.13.110.103" x_forwarded_proto:"https" vcap_request_id:c8b686a8-9364-4bf0-6d72-6f3c499802ea response_time:0.010540238 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"4171117647"
+2017-04-07T22:50:06.08+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:50:06.081 +0000] "POST /webhook HTTP/1.1" 200 330 2 "-" "-" 108.168.250.154:26680 x_forwarded_for:"31.13.110.100" x_forwarded_proto:"https" vcap_request_id:9eaef0d3-cf63-43a6-494a-aec3649a4d89 response_time:0.007423288 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"2987074727"
+2017-04-07T22:50:06.09+0200 [APP/0]      OUT event.message.text : Je cherche des informations pour me former à la plongée.
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT Detected {
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         {
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             "intent": "formation",
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             "confidence": 0.998688781982721
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     ],
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         "text": "Je cherche des informations pour me former à la plongée."
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     },
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         ],
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             "Formation"
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         ]
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     },
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 "Formation"
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                     1,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                     0,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                     1,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                     2
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 ],
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                     0,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 "Formation": [
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             }
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     }
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT }
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT Detected intent: #formation
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT response.context {
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     "system": {
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             "Formation"
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         ],
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         "dialog_request_counter": 3,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 1,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 0,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 1,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 0,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 1,
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT                 2
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT             ]
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT         }
+2017-04-07T22:50:06.22+0200 [APP/0]      OUT     }
+2017-04-07T22:50:07.08+0200 [APP/0]      OUT event.message.text : Parfait, je peux vous renseigner sur la plongéei. Mais, avant de commencer, quel est votre niveau actuel ?
+2017-04-07T22:50:07.10+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:50:07.079 +0000] "POST /webhook HTTP/1.1" 200 415 2 "-" "-" 169.54.202.27:16219 x_forwarded_for:"31.13.113.178" x_forwarded_proto:"https" vcap_request_id:34b56488-21e1-4535-70f5-baacaf4caffd response_time:0.020818529 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3494342121"
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT Detected {
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         {
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             "confidence": 0.6087605037331407
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         }
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     ],
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         "text": "Parfait, je peux vous renseigner sur la plongéei. Mais, avant de commencer, quel est votre niveau actuel ?"
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     },
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         ],
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     },
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT                 "root"
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             "dialog_request_counter": 2,
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT                     0
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT                 ],
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT                     0
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT                     0,
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT                     0,
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT                 ]
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             },
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             "branch_exited": true
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         }
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     }
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT }
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT Detected intent: #help
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT response.context {
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             "root"
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         ],
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         "dialog_turn_counter": 2,
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         "dialog_request_counter": 2,
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             "node_11_1491251387322": [
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             "Interet": [
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT                 1
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT             ]
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         },
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT         "branch_exited": true
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT     }
+2017-04-07T22:50:07.22+0200 [APP/0]      OUT }
+2017-04-07T22:50:07.33+0200 [APP/0]      OUT Error sec:  [object Object][object Object]
+2017-04-07T22:50:07.42+0200 [APP/0]      OUT Error third:  { message: '(#100) No matching user found',
+2017-04-07T22:50:07.42+0200 [APP/0]      OUT   error_subcode: 2018001,
+2017-04-07T22:50:07.42+0200 [APP/0]      OUT   fbtrace_id: 'BLzoaNWRGKm' }
+2017-04-07T22:50:08.98+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:50:08.890 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 192.155.237.114:41886 x_forwarded_for:"31.13.113.188" x_forwarded_proto:"https" vcap_request_id:e8f6142e-d283-4a18-748a-68a30b13c038 response_time:0.072381363 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1722350687"
+2017-04-07T22:50:09.05+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:50:09.047 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 169.54.202.28:12495 x_forwarded_for:"31.13.113.84" x_forwarded_proto:"https" vcap_request_id:ac41b3c8-58d2-43c2-52d1-6d36f6ab8e05 response_time:0.005992946 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1709535693"
+2017-04-07T22:50:36.67+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:50:36.642 +0000] "POST /webhook HTTP/1.1" 200 305 2 "-" "-" 192.155.237.119:35583 x_forwarded_for:"31.13.113.176" x_forwarded_proto:"https" vcap_request_id:28655a7c-b6d0-41af-54eb-2ab1bd74b724 response_time:0.030814894 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3173069487"
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT Detected {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "intent": "Niveau",
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "confidence": 0.9030256127116341
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     ],
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     "entities": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "entity": "padi_certification",
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "location": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 21,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 28
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "value": "Novice",
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "confidence": 1
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "text": "Je viens de faire un baptème en mer."
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     },
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "Après votre baptème, je vous propose pour aller plus loin la formation Padi Open Water. Plus d'information ?"
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "baptème"
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         ]
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     },
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "dialog_turn_counter": 4,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                     1,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                     0,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                     1,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                     2
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                     0,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 ],
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 "Formation": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                     0
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 ],
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                     0
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "branch_exited_reason": "completed"
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     }
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT }
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT Detected Entity: #padi_certification
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT response.context {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     "system": {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "root"
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "dialog_turn_counter": 4,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "dialog_request_counter": 4,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 1,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 1,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 2
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "node_2_1479906095307": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 0,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT                 1,
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT             ]
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         },
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT         "branch_exited_reason": "completed"
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT     }
+2017-04-07T22:50:36.86+0200 [APP/0]      OUT }
+2017-04-07T22:50:37.66+0200 [APP/0]      OUT event.message.text : Après votre baptème, je vous propose pour aller plus loin la formation Padi Open Water. Plus d'information ?
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT Detected {
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         {
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "confidence": 0.8029167026683949
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         }
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     "entities": [
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 71,
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 86
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "value": "PADI Open Water",
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "confidence": 1
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "entity": "padi_certification",
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "location": [
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 19
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "confidence": 1
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         }
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     },
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "Parfait, je peux vous renseigner sur la plongéei. Mais, avant de commencer, quel est votre niveau actuel ?"
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         ]
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 "Formation"
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "dialog_request_counter": 3,
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                     0
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 "Interet": [
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                     0,
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                     0,
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 "Formation": [
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 ]
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             }
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         }
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     }
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT }
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT Detected Entity: #padi_certification
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT response.context {
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     "system": {
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             "Formation"
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         "dialog_turn_counter": 3,
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 0
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 0,
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 1
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             ],
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT                 0
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT             ]
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT         }
+2017-04-07T22:50:37.82+0200 [APP/0]      OUT     }
+2017-04-07T22:50:37.92+0200 [APP/0]      OUT Error sec:  [object Object][object Object]
+2017-04-07T22:50:38.06+0200 [APP/0]      OUT Error third:  { message: '(#100) No matching user found',
+2017-04-07T22:50:38.06+0200 [APP/0]      OUT   code: 100,
+2017-04-07T22:50:38.06+0200 [APP/0]      OUT   error_subcode: 2018001,
+2017-04-07T22:50:39.68+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:50:39.680 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 169.54.202.26:10254 x_forwarded_for:"31.13.113.67" x_forwarded_proto:"https" vcap_request_id:d215fc78-e1e9-47f7-488d-cd62812d53d1 response_time:0.006762303 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"2485219395"
+2017-04-07T22:50:39.82+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:50:39.815 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 108.168.250.151:28549 x_forwarded_for:"31.13.113.180" x_forwarded_proto:"https" vcap_request_id:0ed21e75-d65c-4e2f-65b8-5c5951ac91f8 response_time:0.012146099 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"500542687"
+2017-04-07T22:53:09.47+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:53:09.463 +0000] "POST /webhook HTTP/1.1" 200 296 2 "-" "-" 169.54.202.27:18639 x_forwarded_for:"31.13.110.118" x_forwarded_proto:"https" vcap_request_id:173ef578-75b3-4326-7b78-3c86fc76e771 response_time:0.009173924 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3109729311"
+2017-04-07T22:53:09.47+0200 [APP/0]      OUT event.message.text : Dites m'en plus sur Open Water ?
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT Detected {
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         {
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "confidence": 0.9979807266253357
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         }
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT     ],
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "location": [
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "value": "PADI Open Water",
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "confidence": 1
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         }
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT     ],
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT     },
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "Que diriez-vous de nous contacter pour en parler ?"
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         ],
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "info_général",
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         ]
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                 "Interet"
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "dialog_turn_counter": 5,
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "dialog_request_counter": 5,
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                     2
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                     1,
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                     2
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                 "baptème": [
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                 "node_7_1491250436812": [
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT                 ]
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT         }
+2017-04-07T22:53:09.65+0200 [APP/0]      OUT }
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT Detected Entity: #padi_certification
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT response.context {
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT     "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT         "dialog_turn_counter": 5,
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT         "dialog_request_counter": 5,
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT                 1,
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT                 0,
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT             "node_2_1479906095307": [
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT                 0,
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT                 2
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT                 0
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT                 0
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT             ]
+2017-04-07T22:53:09.66+0200 [APP/0]      OUT }
+2017-04-07T22:53:10.58+0200 [APP/0]      OUT Que diriez-vous de nous contacter pour en parler ?
+2017-04-07T22:53:10.68+0200 [APP/0]      OUT error: { error: { error: { 'input.text': [Object] } } }
+2017-04-07T22:53:26.59+0200 [APP/0]      OUT event.message.text : Oui
+2017-04-07T22:53:26.61+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:53:26.592 +0000] "POST /webhook HTTP/1.1" 200 267 2 "-" "-" 192.155.237.116:20873 x_forwarded_for:"31.13.113.68" x_forwarded_proto:"https" vcap_request_id:be346258-d25e-40be-6e6d-db0b787294b1 response_time:0.019114328 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"4170660649"
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT Detected {
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT         {
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT             "intent": "other",
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT             "confidence": 0.21748777314461037
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT     ],
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT         {
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT                 0,
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT             "value": "Oui",
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT             "confidence": 1
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT         }
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT     ],
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT         "text": "Oui"
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT     },
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT         ],
+2017-04-07T22:53:26.77+0200 [APP/0]      OUT         ]
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT     },
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT             "dialog_turn_counter": 6,
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                     1,
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                     1,
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                     2
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                     2
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                 "Formation": [
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                 "baptème": [
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                 "node_7_1491250436812": [
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                 "Interet": [
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT                 ]
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT             },
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT             "branch_exited": true,
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT             "branch_exited_reason": "completed"
+2017-04-07T22:53:26.78+0200 [APP/0]      OUT         }
+2017-04-07T22:53:27.70+0200 [APP/0]      OUT event.message.text : Voici nos informations de contact : 06.60.59.05.15  isanthea  Ecole de Plongée ISANTHEA  Péniche Ok Bleu  Face 73 quai du docteur Dervaux  92 600 Asnieres sur Seine
+2017-04-07T22:53:27.71+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:53:27.669 +0000] "POST /webhook HTTP/1.1" 200 478 2 "-" "-" 192.155.237.115:49283 x_forwarded_for:"31.13.110.99" x_forwarded_proto:"https" vcap_request_id:50a094b2-7fb4-4abe-62bf-22c3e9a092a6 response_time:0.048769764 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1925752333"
+2017-04-07T22:53:27.77+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:53:27.765 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 192.155.237.115:30392 x_forwarded_for:"31.13.113.76" x_forwarded_proto:"https" vcap_request_id:7d0c850f-6c9b-468d-7d10-4c15a8c44a4c response_time:0.006379017 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1925752557"
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "intent": "formation",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "confidence": 0.46397420833122577
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         }
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     "entities": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "entity": "sys-time",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "location": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 45,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 50
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "value": "05:15:00",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "metadata": {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 "calendar_type": "GREGORIAN",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 "timezone": "GMT"
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             }
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "entity": "sys-time",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 139,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 145
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "confidence": 1,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "metadata": {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 "calendar_type": "GREGORIAN",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             }
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         },
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "location": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 139,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 145
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "value": "06:00:00",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 "calendar_type": "GREGORIAN",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 "timezone": "null"
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             }
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         }
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         "text": "Voici nos informations de contact : 06.60.59.05.15  isanthea  Ecole de Plongée ISANTHEA  Péniche Ok Bleu  Face 73 quai du docteur Dervaux  92 600 Asnieres sur Seine"
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     },
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "Je peux vous renseigner sur le cursus de formation à la plongée. Mais, avant de commencer, quel est votre niveau actuel ?"
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         ]
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     },
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 "Formation"
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "dialog_turn_counter": 4,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "dialog_request_counter": 4,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 "node_11_1491251387322": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 "Interet": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                     1
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                     1
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 ]
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             },
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "branch_exited_reason": "fallback"
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         }
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     }
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT Detected intent: #formation
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT Detected Entity: #sys-time
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT     "system": {
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         "dialog_turn_counter": 4,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         "dialog_request_counter": 4,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 0
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "Interet": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 0
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 0,
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 1
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT                 1
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT             ]
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT         },
+2017-04-07T22:53:28.05+0200 [APP/0]      OUT }
+2017-04-07T22:53:28.33+0200 [APP/0]      OUT Error third:  { message: '(#100) No matching user found',
+2017-04-07T22:53:28.33+0200 [APP/0]      OUT   type: 'OAuthException',
+2017-04-07T22:53:28.33+0200 [APP/0]      OUT   error_subcode: 2018001,
+2017-04-07T22:53:28.50+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:53:28.498 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 169.54.202.25:41015 x_forwarded_for:"31.13.114.73" x_forwarded_proto:"https" vcap_request_id:19973de9-5f99-4acc-6a82-3933d821d34f response_time:0.005853645 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"2286927949"
+2017-04-07T22:53:28.74+0200 [APP/0]      OUT event.message.text : ☎️Vous désirez discuter avec nous tout de suite ?
+2017-04-07T22:53:28.74+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:53:28.732 +0000] "POST /webhook HTTP/1.1" 200 589 2 "-" "-" 169.54.202.27:18246 x_forwarded_for:"31.13.113.178" x_forwarded_proto:"https" vcap_request_id:1044b568-4128-4b61-7b61-70cd56ac4c8e response_time:0.013773787 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3109961743"
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT             "intent": "generalinfo",
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT         }
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT         "text": "☎️Vous désirez discuter avec nous tout de suite ?"
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT     },
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT             "Pouvez vous réessayer avec une autre question?",
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT         ],
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT             "node_2_1479906095307",
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT             "Aide"
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT         ]
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT     },
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT         "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT             "dialog_turn_counter": 5,
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT             "dialog_request_counter": 5,
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT                 "node_11_1491251387322": [
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT                     2,
+2017-04-07T22:53:28.89+0200 [APP/0]      OUT                     1
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 ]
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT             },
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT             "branch_exited_reason": "fallback",
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT             "branch_exited": true
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT     }
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT }
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT Detected intent: #generalinfo
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT     "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT         ],
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT         "dialog_request_counter": 5,
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT             "node_11_1491251387322": [
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 0
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT             "Interet": [
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 0
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 1,
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 2,
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 0,
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 1
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 1
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT             "node_2_1479906095307": [
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 1,
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT                 0,
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT             ]
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT         },
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT     }
+2017-04-07T22:53:28.90+0200 [APP/0]      OUT }
+2017-04-07T22:53:29.02+0200 [RTR/2]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:53:29.004 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 108.168.250.153:37336 x_forwarded_for:"31.13.110.97" x_forwarded_proto:"https" vcap_request_id:2362eba1-b470-4677-4da2-c3f62c0c0c09 response_time:0.017697357 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"2988507479"
+2017-04-07T22:53:29.04+0200 [APP/0]      OUT Error sec:  [object Object][object Object]
+2017-04-07T22:53:29.17+0200 [APP/0]      OUT Error third:  { message: '(#100) No matching user found',
+2017-04-07T22:53:29.17+0200 [APP/0]      OUT   type: 'OAuthException',
+2017-04-07T22:53:29.17+0200 [APP/0]      OUT   code: 100,
+2017-04-07T22:53:29.17+0200 [APP/0]      OUT   fbtrace_id: 'Fyaz2Mf9H/4' }
+2017-04-07T22:53:54.35+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:53:54.343 +0000] "POST /webhook HTTP/1.1" 200 292 2 "-" "-" 169.54.202.26:33289 x_forwarded_for:"31.13.113.186" x_forwarded_proto:"https" vcap_request_id:7026cad3-a632-4e9c-4a9e-87c16dccd1ad response_time:0.007608613 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"2287234237"
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT         {
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             "intent": "voyage",
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             "confidence": 0.9990514376948194
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT     ],
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT         "text": "Organisez vous des voyages ?"
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             "Oui, nous organisons des sorties dans des lacs parisiens, en Corse, en Bretagne et même de la plongée sous glace",
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             "Pourquoi ne pas en parler? Contactez nous..."
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT         ],
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             "voyage",
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             "Interet"
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT         ]
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT     },
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT         "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT                 "Interet"
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             "dialog_turn_counter": 7,
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT             "dialog_request_counter": 7,
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT                     1,
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT                     1,
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT                     2
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:54.50+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                     0,
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                     1,
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 "baptème": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 "node_7_1491250436812": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 "Interet": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 "node_19_1491251660262": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 "voyage": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                     0
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 ]
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             }
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT         }
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT }
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT Detected intent: #voyage
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT response.context {
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT     "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT     "system": {
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT         ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT         "dialog_request_counter": 7,
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 1,
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 2
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 0,
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 1,
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 2
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 0
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT                 0
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             "Interet": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             "node_19_1491251660262": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             ],
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             "voyage": [
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT             ]
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT         }
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT     }
+2017-04-07T22:53:54.51+0200 [APP/0]      OUT }
+2017-04-07T22:53:55.41+0200 [APP/0]      OUT event.message.text : Oui, nous organisons des sorties dans des lacs parisiens, en Corse, en Bretagne et même de la plongée sous glace
+2017-04-07T22:53:55.52+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:53:55.519 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 192.155.237.116:17903 x_forwarded_for:"31.13.113.188" x_forwarded_proto:"https" vcap_request_id:b0e290b0-4fc4-4121-631e-fe151710f41e response_time:0.006715291 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3453238717"
+2017-04-07T22:53:55.54+0200 [APP/0]      OUT error: { error: { error: { 'input.text': [Object] } } }
+2017-04-07T22:55:00.98+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:55:00.857 +0000] "POST /webhook HTTP/1.1" 200 292 2 "-" "-" 169.54.202.26:13449 x_forwarded_for:"31.13.113.177" x_forwarded_proto:"https" vcap_request_id:51fd4d73-305b-4554-57a7-2d967e74d6fe response_time:0.108088808 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"2485962243"
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT Detected {
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     "entities": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         {
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "entity": "spécialités",
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "location": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "value": "Nitrox",
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         "text": "Sinon c'est quoi le Nitrox ?"
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     },
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "La plongée à l’air enrichi est la plus demandée parmi les Spécialités de plongée PADI. La raison est évidente: plonger à l’air enrichi Nitrox autorise une limite de non décompression plus longue ; ce qui signifie plus de temps sous l’eau, en particulier pour les plongées successives.  En fait, vous pouvez rester plus longtemps sous l’eau et y retourner plus rapidement. C’est la raison pour laquelle de nombreux plongeurs la choisissent comme première Spécialité.",
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "info_général",
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     },
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 "Interet"
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "dialog_request_counter": 8,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     0,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     0,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     0,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     1,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     2
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 "Formation": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 "baptème": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 "node_7_1491250436812": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 "voyage": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 "node_15_1491251518959": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 ]
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             },
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "branch_exited_reason": "fallback"
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     }
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT }
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT Detected intent: #generalinfo
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT Detected Entity: #spécialités
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT response.context {
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "Interet"
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         "dialog_turn_counter": 8,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 1,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 0,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 2
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "node_2_1479906095307": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 0,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 1,
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 2
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "node_7_1491250436812": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "Interet": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             "node_15_1491251518959": [
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT             ]
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         },
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT         "branch_exited_reason": "fallback"
+2017-04-07T22:55:01.08+0200 [APP/0]      OUT     }
+2017-04-07T22:55:01.93+0200 [APP/0]      OUT event.message.text : La plongée à l’air enrichi est la plus demandée parmi les Spécialités de plongée PADI. La raison est évidente: plonger à l’air enrichi Nitrox autorise une limite de non décompression plus longue ; ce qui signifie plus de temps sous l’eau, en particulier pour les plongées successives.  En fait, vous pouvez rester plus longtemps sous l’eau et y retourner plus rapidement. C’est la raison pour laquelle de nombreux plongeurs la choisissent comme première Spécialité.
+2017-04-07T22:55:01.93+0200 [APP/0]      OUT Que diriez-vous de nous contacter pour en parler ?
+2017-04-07T22:55:02.86+0200 [RTR/2]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:55:02.861 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 108.168.250.151:10241 x_forwarded_for:"31.13.113.77" x_forwarded_proto:"https" vcap_request_id:9bf4ddb7-44e9-4019-7152-b4c997b09c36 response_time:0.007578409 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1839659593"
+2017-04-07T22:55:40.66+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:55:40.654 +0000] "POST /webhook HTTP/1.1" 200 290 2 "-" "-" 108.168.250.156:15200 x_forwarded_for:"31.13.110.107" x_forwarded_proto:"https" vcap_request_id:599cf792-63da-441b-48b8-ff668235c2d2 response_time:0.007558382 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"4153993167"
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT Detected {
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT             "intent": "localisation",
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT             "confidence": 0.9962305157694513
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT         "text": "Sinon ou peut-on plonger ?"
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT     },
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT             "Cliquez sur l'icone de localisation et je vous dirais ça.."
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT         ],
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT             "localisation"
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT         ]
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT     },
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT         "conversation_id": "48035b6b-7c8f-4314-bf13-9bb7700de8d4",
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT             "dialog_request_counter": 9,
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT                     1,
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT                     0,
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT                     1,
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT                     2
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT                     0,
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT                     0,
+2017-04-07T22:55:40.91+0200 [APP/0]      OUT                     2
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 "node_7_1491250436812": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 "node_19_1491251660262": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 "voyage": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 "node_15_1491251518959": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 "localisation": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                     0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             },
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "branch_exited_reason": "fallback",
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT         }
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT     }
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT Detected intent: #localisation
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT response.context {
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT         ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT         "dialog_turn_counter": 9,
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT         "dialog_request_counter": 9,
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 1,
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 0,
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 1,
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "node_2_1479906095307": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 1,
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 2
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "node_7_1491250436812": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "Interet": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "node_19_1491251660262": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "voyage": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "node_15_1491251518959": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             "localisation": [
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT             ]
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT         },
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT         "branch_exited_reason": "fallback",
+2017-04-07T22:55:40.92+0200 [APP/0]      OUT }
+2017-04-07T22:55:41.82+0200 [APP/0]      OUT event.message.text : Cliquez sur l'icone de localisation et je vous dirais ça..
+2017-04-07T22:55:41.82+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:55:41.820 +0000] "POST /webhook HTTP/1.1" 200 367 2 "-" "-" 169.54.202.27:18246 x_forwarded_for:"31.13.113.181" x_forwarded_proto:"https" vcap_request_id:4e9c3cda-adb1-4d71-6002-284a5b86e58d response_time:0.007232423 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"320799521"
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT Detected {
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         {
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "intent": "appel",
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "confidence": 0.2770629885078469
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         }
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT     ],
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT     },
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "Désolé, je n'ai pas compris votre phrase",
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "Exemple de questions ? \"Pourrez-vous me renseigner sur le cursus de formation ?\", \" Pouvez-vous me donner plus d'info sur la spécialité Nitrox ?\", \"Ou plonger ?\""
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "node_2_1479906095307",
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "Aide"
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "dialog_turn_counter": 6,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "dialog_request_counter": 6,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 "node_11_1491251387322": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 "Interet": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                     2,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                     2,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                     0,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                     1
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 "Formation": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                     1
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 ],
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                     1,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                     0,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                     2
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 ]
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "branch_exited_reason": "completed"
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         }
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT     }
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT }
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT     "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT     "system": {
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "root"
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         ],
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         "dialog_turn_counter": 6,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         "dialog_request_counter": 6,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 0
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 2,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 0,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 1
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 1
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             ],
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT             "node_2_1479906095307": [
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 1,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 1,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT                 0,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         },
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         "branch_exited": true,
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT         "branch_exited_reason": "completed"
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT     }
+2017-04-07T22:55:41.96+0200 [APP/0]      OUT }
+2017-04-07T22:55:42.14+0200 [APP/0]      OUT Error sec:  [object Object][object Object]
+2017-04-07T22:55:42.24+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:55:42.235 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 192.155.237.117:13441 x_forwarded_for:"31.13.113.64" x_forwarded_proto:"https" vcap_request_id:8c213f29-e4ff-441e-5699-84a893fd9679 response_time:0.005926585 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1008852535"
+2017-04-07T22:55:42.31+0200 [APP/0]      OUT Error third:  { message: '(#100) No matching user found',
+2017-04-07T22:55:42.31+0200 [APP/0]      OUT   fbtrace_id: 'F42uxPmgzzf' }
+2017-04-07T22:55:42.68+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:55:42.676 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 192.155.237.114:48837 x_forwarded_for:"31.13.110.120" x_forwarded_proto:"https" vcap_request_id:286bced3-69be-45e0-6cf6-1a3e4e295365 response_time:0.005141759 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"2804613863"
+2017-04-07T22:56:16.02+0200 [APP/0]      OUT Coordonnées : 112-126 D986, 92230 Gennevilliers, France
+2017-04-07T22:56:16.91+0200 [APP/0]      OUT event.message.text : 🖼 Pas de site recensé près de votre lieu.
+2017-04-07T22:56:16.92+0200 [RTR/2]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:56:16.908 +0000] "POST /webhook HTTP/1.1" 200 366 2 "-" "-" 108.168.250.153:41012 x_forwarded_for:"31.13.113.66" x_forwarded_proto:"https" vcap_request_id:f489819f-3118-4c87-4580-ffd9eb6ea8e2 response_time:0.012144516 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"297238609"
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT     "intents": [
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT         {
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT             "intent": "localisation",
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT     ],
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT             "Cliquez sur l'icone de localisation et je vous dirais ça.."
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT             "localisation"
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT                 "root"
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT             ],
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT             "dialog_turn_counter": 7,
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT             "dialog_request_counter": 7,
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:56:17.14+0200 [APP/0]      OUT                 "node_11_1491251387322": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                     0
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 "Interet": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                     0
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 ],
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                     2,
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                     0,
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                     1
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 ],
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                     1
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 ],
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                     0,
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                     2
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 ],
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 "localisation": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                     0
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             },
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             "branch_exited": true,
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             "branch_exited_reason": "completed"
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT         }
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT     }
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT }
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT response.context {
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT     "system": {
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             "root"
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT         ],
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT         "dialog_request_counter": 7,
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             "node_11_1491251387322": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 0
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             ],
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             ],
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 2,
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 1
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             ],
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 1
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             ],
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             "node_2_1479906095307": [
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT                 1,
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT             ]
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT         },
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT         "branch_exited_reason": "completed"
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT     }
+2017-04-07T22:56:17.15+0200 [APP/0]      OUT }
+2017-04-07T22:56:17.15+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:56:17.142 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 192.155.237.119:39347 x_forwarded_for:"31.13.113.176" x_forwarded_proto:"https" vcap_request_id:13ef8bbb-52b4-48d9-4cef-bb686726b261 response_time:0.013591943 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3177642511"
+2017-04-07T22:56:17.33+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:56:17.328 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 108.168.250.153:59558 x_forwarded_for:"31.13.113.87" x_forwarded_proto:"https" vcap_request_id:2f54bd52-4646-4dd2-5d69-a19b0ad541d9 response_time:0.006854629 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"297239553"
+2017-04-07T22:56:17.43+0200 [APP/0]      OUT Error third:  { message: '(#100) No matching user found',
+2017-04-07T22:56:17.43+0200 [APP/0]      OUT   code: 100,
+2017-04-07T22:56:17.43+0200 [APP/0]      OUT   error_subcode: 2018001,
+2017-04-07T22:56:53.97+0200 [APP/0]      OUT Coordonnées : Chatelet, 75004 Paris, France
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT Detected {
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         {
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "confidence": 0.7261774760860565
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         }
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT     "input": {
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         "text": "🖼 Pas de site recensé près de votre lieu."
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "Cliquez sur l'icone de localisation et je vous dirais ça.."
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "localisation"
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT     "context": {
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 "node_11_1491251387322": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 "Interet": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                     0
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 "node_2_1488536385050": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                     2,
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                     0,
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                     1
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 "Formation": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                     1
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                     1,
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                     1,
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 "localisation": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                     0
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 ]
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             },
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "branch_exited": true,
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         }
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT     }
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "root"
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         "dialog_request_counter": 8,
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "node_11_1491251387322": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "Interet": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 2,
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 1
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             ],
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 1,
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 2
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT             "localisation": [
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT                 0
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         },
+2017-04-07T22:56:54.92+0200 [APP/0]      OUT         "branch_exited": true,
+2017-04-07T22:56:55.06+0200 [APP/0]      OUT Error sec:  [object Object][object Object]
+2017-04-07T22:56:55.23+0200 [APP/0]      OUT Error third:  { message: '(#100) No matching user found',
+2017-04-07T22:56:55.23+0200 [APP/0]      OUT   code: 100,
+2017-04-07T22:56:55.23+0200 [APP/0]      OUT   fbtrace_id: 'BNNUNHiKXQ3' }
+2017-04-07T22:56:55.48+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:56:55.480 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 108.168.250.153:60624 x_forwarded_for:"31.13.110.96" x_forwarded_proto:"https" vcap_request_id:c973074f-ea7b-4595-747d-b5db5143fd39 response_time:0.005693798 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1178752627"
+2017-04-07T22:57:36.14+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:57:36.139 +0000] "POST /webhook HTTP/1.1" 200 885 2 "-" "-" 192.155.237.118:23510 x_forwarded_for:"31.13.113.176" x_forwarded_proto:"https" vcap_request_id:6bf4ce66-0658-4922-4ba8-6da6b924657f response_time:0.006248809 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3178454335"
+2017-04-07T22:57:36.25+0200 [APP/0]      OUT Coordonnées : France
+2017-04-07T22:58:12.10+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:58:12.092 +0000] "POST /webhook HTTP/1.1" 200 893 2 "-" "-" 192.155.237.118:23841 x_forwarded_for:"31.13.113.76" x_forwarded_proto:"https" vcap_request_id:2a13506f-2e98-4537-6fab-29a34fd8a13f response_time:0.007700384 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"241625863"
+2017-04-07T22:58:12.16+0200 [APP/0]      OUT Coordonnées : 112-126 D986, 92230 Gennevilliers, France
+2017-04-07T22:58:12.16+0200 [APP/0]      OUT Coordonnées : Gennevilliers
+2017-04-07T22:58:12.96+0200 [APP/0]      OUT event.message.text : 🖼 Pas de site recensé près de votre lieu.
+2017-04-07T22:58:12.96+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:58:12.958 +0000] "POST /webhook HTTP/1.1" 200 366 2 "-" "-" 192.155.237.118:45323 x_forwarded_for:"31.13.113.183" x_forwarded_proto:"https" vcap_request_id:a4c45ba7-d842-4d22-5372-01553c66cd95 response_time:0.008689907 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"1274586227"
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "intent": "localisation",
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT     ],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT     "entities": [],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT     },
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT     "output": {
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "log_messages": [],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "text": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "Cliquez sur l'icone de localisation et je vous dirais ça.."
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         ],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "nodes_visited": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "localisation"
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT     },
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "system": {
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "dialog_stack": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 "root"
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "dialog_turn_counter": 9,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "_node_output_map": {
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 "node_11_1491251387322": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     0
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 ],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 "Interet": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     0
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 ],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     2,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     2,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     1
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     1
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 "node_2_1479906095307": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     1,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     1,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     0,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     2
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 ],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 "localisation": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                     0
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 ]
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             },
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "branch_exited": true,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "branch_exited_reason": "completed"
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         }
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT     "conversation_id": "ea351c8d-5dcc-4f03-a0d5-242482cb0385",
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT     "system": {
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "dialog_stack": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         ],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "dialog_turn_counter": 9,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "dialog_request_counter": 9,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "_node_output_map": {
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             ],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "Interet": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 0
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "node_2_1488536385050": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 1
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "Formation": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 1,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 1,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 0,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT                 2
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             ],
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             "localisation": [
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT             ]
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         },
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "branch_exited": true,
+2017-04-07T22:58:13.09+0200 [APP/0]      OUT         "branch_exited_reason": "completed"
+2017-04-07T22:58:13.20+0200 [APP/0]      OUT Error sec:  [object Object][object Object]
+2017-04-07T22:58:13.25+0200 [RTR/3]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:58:13.246 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 108.168.250.154:51942 x_forwarded_for:"31.13.114.70" x_forwarded_proto:"https" vcap_request_id:fe876074-9d53-41d6-7faa-6c2b7e8d2354 response_time:0.009345358 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"2989722103"
+2017-04-07T22:58:13.32+0200 [APP/0]      OUT Error third:  { message: '(#100) No matching user found',
+2017-04-07T22:58:13.32+0200 [APP/0]      OUT   error_subcode: 2018001,
+2017-04-07T22:58:13.32+0200 [APP/0]      OUT   fbtrace_id: 'HASrBAAlalN' }
+2017-04-07T22:58:14.04+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:58:14.030 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 192.155.237.118:20775 x_forwarded_for:"31.13.113.171" x_forwarded_proto:"https" vcap_request_id:b66c68ea-e54c-4f80-5efa-19a5c8e2a9ca response_time:0.010167657 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3179371279"
+2017-04-07T22:58:24.56+0200 [APP/0]      OUT Coordonnées : 56640 Arzon, France
+2017-04-07T22:58:24.56+0200 [APP/0]      OUT Coordonnées : 56640
+2017-04-07T22:58:25.39+0200 [APP/0]      OUT event.message.text : Près de 56640 Arzon, France, je vois 3 sites de plongées intéressants : 
+2017-04-07T22:58:25.39+0200 [APP/0]      OUT  - Fosse Conflans St Honorine 
+2017-04-07T22:58:25.40+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:58:25.396 +0000] "POST /webhook HTTP/1.1" 200 470 2 "-" "-" 169.54.202.28:20027 x_forwarded_for:"31.13.110.98" x_forwarded_proto:"https" vcap_request_id:12d885a6-f3d7-4487-7de4-1095a811636b response_time:0.007511208 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"260808231"
+2017-04-07T22:58:25.64+0200 [RTR/0]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:58:25.642 +0000] "POST /webhook HTTP/1.1" 200 280 2 "-" "-" 108.168.250.153:11845 x_forwarded_for:"31.13.113.87" x_forwarded_proto:"https" vcap_request_id:e1033e63-3227-44cc-78aa-d4e3ba8f985d response_time:0.005701714 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"4178192815"
+2017-04-07T22:58:26.00+0200 [RTR/1]      OUT diving-assistant.mybluemix.net - [07/04/2017:20:58:25.997 +0000] "POST /webhook HTTP/1.1" 200 230 2 "-" "-" 108.168.250.152:21050 x_forwarded_for:"31.13.110.100" x_forwarded_proto:"https" vcap_request_id:b84b61eb-7bff-4b50-4890-e580176a663d response_time:0.006358331 app_id:cbb09009-e54b-47fb-9035-fb19759157c8 x_global_transaction_id:"3991572529"
