@@ -1,16 +1,33 @@
-# Node.js Hello World Sample
+#Facebook Messenger Bot using [IBM Interact](https://www.ibm.com/ms-en/marketplace/real-time-inbound-marketing) prototype
 
-This application demonstrates a simple, reusable Node.js web application based on the Express framework.
+This application demonstrates a simple, reusable Facebook Messenger bot using [Watson Conversation] (https://www.ibm.com/watson/developercloud/conversation.html) & [IBM Interact](https://www.ibm.com/ms-en/marketplace/real-time-inbound-marketing).
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/nodejs-helloworld)
+## Steps
 
-## Run the app locally
+1. Fork the code
 
-1. [Install Node.js][]
-+ cd into this project's root directory
-+ Run `npm install` to install the app's dependencies
-+ Run `npm start` to start the app
-+ Access the running app in a browser at <http://localhost:6001>
+2. Upload Dialog 
++ Dialog can be found [here](https://github.com/vperrinfr/FB_Bot_Interact/blob/master/dialog.json)
++ Upload it in your Watson Conversation service [documentation](https://www.ibm.com/watson/developercloud/doc/conversation/index.html)
++ Retrieve the Workspace ID
++ Put that ID in app.js file in the var *workspaceIdVP*
 
-[Install Node.js]: https://nodejs.org/en/download/
-"# FB_Bot_Interact" 
+3. Deploy that app on Bluemix [documentation](https://console.ng.bluemix.net/docs/starters/upload_app.html)
+
+4. Register your bot
++ Follow this documentation [here](https://developers.facebook.com/docs/messenger-platform/guides/quick-start)
+`Note : the url of the webhook will be something like https://[app_name].mybluemix.net/webhook`
+
+5. Test the chat
+
+## Troubleshooting
+
+Access to log, type this command `cf logs [app_name] --recent` to analyze any trouble with the dialog.
+
+## Modification of the dialog
+
+:children_crossing: In progress
+
+## IBM Interact Call
+
+:children_crossing: In progress
