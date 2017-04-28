@@ -34,4 +34,52 @@ Access to log, type this command `cf logs [app_name] --recent` to analyze any tr
 
 ## IBM Interact Call
 
-:children_crossing: In progress
+This is the method to call IBM Interact service.
+
+```JavaScript
+function callInteractAPI(sender,Indiv_id)
+{
+  console.log("Interact Call Method");
+var options = { method: 'POST',
+  url: config.get('InteractURL'),
+  headers: 
+   { 'content-type': 'application/json' },
+  body: 
+   { sessionId: '1',
+     commands: 
+      [ { audienceID: [ { v: Indiv_id, t: 'numeric', n: 'Indiv_id' } ],
+          audienceLevel: 'Individual',
+          ic: config.get('IC'),
+          relyOnExistingSession: false,
+          action: 'startSession',
+           parameters: 
+           [ { v: 'Home', t: 'string', n: 'cc_drop_down2' },
+             { v: 'New Loan', t: 'string', n: 'cc_drop_down4' } ],
+          debug: true },
+        { numberRequested: 1,
+          action: 'getOffers',
+          ip: config.get('ip') },
+        { action: 'endSession' } ] },
+  json: true };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+console.log("Nom " + body.responses[1].offerLists[0].offers[0].n);
+console.log("Desc " + body.responses[1].offerLists[0].offers[0].desc);
+
+messageData = {text:body.responses[1].offerLists[0].offers[0].desc};
+// Function to send the message which has been created just above with the IBM Interact offer attributes to the recipient. 
+sendFBMessage (sender, messageData);
+// Send a static image due to the fact there is no image in my Interact Offer at this time.
+sendImageMessage(sender);
+});
+}
+```
+
+In my code, the method is called when the dialog recognize the entity "Home" from the Watson Conversation service. It can easily be changed.
+```JavaScript
+if (response.entities[0].value === "home") {
+  callInteractAPI(sender, config.get('Indiv_id'));		
+}
+```
