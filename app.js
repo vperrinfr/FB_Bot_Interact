@@ -9,7 +9,7 @@ var workspaceIdVP="320fd5a0-1e2e-4cdc-9068-9a5323837f49";
 var session = require("cookie-session");
 var path = require("path");
 
-var secret = "AlainSecretpageAccessToken";
+var secret = "****************************";
 
 var googleMapsClient = require('@google/maps').createClient({
   key: 'AIzaSyBmkiXqLLAmnRnFB7bBr4PENDaZ0e-RMFU'
@@ -173,7 +173,7 @@ app.post("/webhook/", function (req, res) {
                 			messageData = {
         				text: "Hello "+ conversationContext.name + ", I'm Watson your OFN personal banking assistant. I can assist you regarding your financial questions."
     				};
-	        				sendFBMessage (sender, messageData);
+	        		sendFBMessage (sender, messageData);
 							sendAccountLinking(sender);
 					    }
 					    else{
@@ -185,54 +185,7 @@ app.post("/webhook/", function (req, res) {
 				break;
 	        	}
       }
-			else if (event.message && event.message.attachments && event.message.attachments[0].type === "location") {
-
-				var latlng_value = event.message.attachments[0].payload.coordinates.lat+","+event.message.attachments[0].payload.coordinates.long;
-				googleMapsClient.reverseGeocode({
-						latlng: latlng_value
-				}, function(err, response) {
-					if (!err) {
-							console.log("Coordonnées : " + response.json.results[1].formatted_address);
-							console.log("Coordonnées : " + response.json.results[2].address_components[0].long_name);
-							var code_postal = response.json.results[2].address_components[0].long_name;
-							var ville = response.json.results[1].formatted_address;
-							var dep = code_postal.substring(0, 2);
-							console.log("dep : " + dep);
-							if (dep === "92" || dep === "75" || dep === "95" || dep === "56")
-							{
-								var txt = " Près de " + ville +", je vois 3 sites de plongées intéressants : \n - Fosse Aqua92 \n - Fosse Conflans St Honorine \n - Lac de Beaumont sur Oise" 
-								messageData  = {text: txt};
-							}
-							else{
-								messageData  = {text: "Je vois 3 sites de plongées intéressants : \n - Fosse Aqua92 \n - Fosse Conflans St Honorine \n - Lac de Beaumont sur Oise" };
-							}
-
-							sendFBMessage (sender, messageData);
-					}
-				});
-			}
-  	  ///
-      ///   Cas 4 : Message utilisateur de type image
-      ///
-      else if (event.message && event.message.attachments && event.message.attachments[0].type === "image") {
-      		var params = {
-  				url: event.message.attachments[0].payload.url,
-  				classifier_ids: ["docbancaires_1809107749"] 
-				};
-      		visual_recognition.classify(params, function(err, res) {
-				  if (err)
-				    messageData = {text: emoji.frame_with_picture+" Processus de reconnaissance d'image : désolé...erreur technique "};
-				  else 
-				  	if (res.images[0].classifiers.length && res.images[0].classifiers[0].classes.length && res.images[0].classifiers[0].classes[0].class)
-					    messageData = {text: emoji.frame_with_picture+" Processus de reconnaissance d'image - document bien identifié: "+res.images[0].classifiers[0].classes[0].class};
-					else
-						messageData  = {text: emoji.frame_with_picture+" Image non identifiée"};
-				
-				  sendFBMessage (sender, messageData);
-			      
-});
-   	 }
-  		
+		
     }
     res.sendStatus(200);
 });
@@ -262,6 +215,28 @@ function sendAccountLinking(recipientId) {
       }
     }
   };  
+
+  callSendAPI(messageData);
+}
+
+/*
+ * Send an image using the Send API.
+ *
+ */
+function sendImageMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          url: "http://crownsavers.co.uk/login/uploads/Loans~General.jpg"
+        }
+      }
+    }
+  };
 
   callSendAPI(messageData);
 }
@@ -318,8 +293,9 @@ function callSendAPI(messageData) {
   });  
 }
 
-function callInteractAPI(Indiv_id)
+function callInteractAPI(sender,Indiv_id)
 {
+  console.log("Interact Call Method");
 var options = { method: 'POST',
   url: config.get('InteractURL'),
   headers: 
@@ -332,8 +308,11 @@ var options = { method: 'POST',
           ic: config.get('IC'),
           relyOnExistingSession: false,
           action: 'startSession',
+           parameters: 
+           [ { v: 'Home', t: 'string', n: 'cc_drop_down2' },
+             { v: 'New Loan', t: 'string', n: 'cc_drop_down4' } ],
           debug: true },
-        { numberRequested: 5,
+        { numberRequested: 1,
           action: 'getOffers',
           ip: config.get('ip') },
         { action: 'endSession' } ] },
@@ -342,7 +321,14 @@ var options = { method: 'POST',
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
 
-  console.log(body);
+console.log("Nom " + body.responses[1].offerLists[0].offers[0].n);
+console.log("Desc " + body.responses[1].offerLists[0].offers[0].desc);
+
+messageData = {text:body.responses[1].offerLists[0].offers[0].desc};
+// Function to send the message which has been created just above with the IBM Interact offer attributes to the recipient. 
+sendFBMessage (sender, messageData);
+// Send a static image due to the fact there is no image in my Interact Offer at this time.
+sendImageMessage(sender);
 });
 
 }
@@ -414,13 +400,10 @@ function converseText (sender, inputText) {
 					 conversationContext.watsonContext = response.context;
     			if (response.entities[0]) {
 						if (response.entities[0].value === "home") {
-						messageData = {text: "Towne Bank Home loans are the most competitive in the area. As local bank knows the area and where your new home is located and is able to more accurately provide the best rate along with a full set of services including:\n- home inspection\n- loan fee estimates\n- etc..."	};
-						
-						sendFBMessage (sender, messageData);
-						console.log("Interact Call");
-						callInteractAPI(config.get('Indiv_id'));
-						console.log("Interact END");
-					}
+
+            callInteractAPI(sender, config.get('Indiv_id'));		
+					
+          }
 					else if (response.entities[0].entity === "réponses")
 					{
 						messageData = {
@@ -428,7 +411,7 @@ function converseText (sender, inputText) {
 									"type":"template",
 									"payload":{
 										"template_type":"button",
-										"text":emoji.phone + "We can dicuss about it right now if you want ?",
+										"text":emoji.phone + "We can discuss by phone about it right now?",
 											"buttons":[
 												{
 														"type":"phone_number",
